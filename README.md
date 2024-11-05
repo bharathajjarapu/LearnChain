@@ -8,6 +8,13 @@ BlockChain Guide for Community
 ### Decentralization
 Decentralization refers to distributing functions across multiple units, forming an interconnected system without a single entity holding complete authority. This architecture distributes workloads both hardware and software among various workstations.
 
+### Cryptocurrency
+Cryptocurrency is a digital or virtual currency that uses cryptography to encrypt its transactions and regulate the creation of new units. They are often traded on decentralized exchanges and can also be used to purchase goods and services. 
+
+### Bitcoin & Etherium
+- Bitcoin is a decentralized digital currency that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries. Transactions are verified by network nodes through cryptography and recorded in a public dispersed ledger called a blockchain.
+- Ethereum is also a decentralized digital currency, but it goes beyond being just a payment system. It is also a platform that allows developers to build and run decentralized applications (dapps). These dapps can be used to create anything from smart contracts to Decentralized Autonomous Organizations (DAOs). 
+
 ### Peer-to-Peer (P2P) 
 A decentralized network architecture where participants (peers) interact directly without a central authority, enhancing resilience and efficiency.
 
