@@ -3,6 +3,23 @@ BlockChain Guide for Community
 
 # Introduction to Blockchain Technology
 
+## Lets Break Down Some Blockchain Buzzwords
+
+### Decentralization
+Decentralization refers to distributing functions across multiple units, forming an interconnected system without a single entity holding complete authority. This architecture distributes workloads both hardware and software among various workstations.
+
+### Peer-to-Peer (P2P) 
+A decentralized network architecture where participants (peers) interact directly without a central authority, enhancing resilience and efficiency.
+
+### Hash Function
+A mathematical algorithm that transforms input data into a fixed-size string of characters, serving as a digital fingerprint for data integrity.
+
+### Proof of Work
+For adding block into the chain, proof of work is needed. miner need to solve tough math calculation to mine the block and this needs huge energy and time consumption. After this also, miners verifies that block is not compromised. That’s why it becomes futile for hackers to try breaching the blockchain.
+
+### Proof of Stake (PoS)
+A consensus algorithm that allows participants to validate transactions based on the number of coins they hold, promoting energy efficiency compared to traditional mining.
+
 ## What is Blockchain ?
 
 Blockchain is a distributed, immutable digital ledger that records transactions across a network of computers. Think of it as a chain of blocks, where each block contains a list of transactions and is cryptographically linked to the previous block, creating an unbreakable chain of information.
@@ -44,3 +61,33 @@ Blockchain technology is like a shared, digital record book, called a *Distribut
 IMG
 
 Returning to the group project example: instead of one centralized spreadsheet or individual copies that need constant syncing, blockchain allows each team member to keep an identical copy of the project’s progress in a way that automatically updates for everyone without needing a central owner. Once a task is marked as complete, it gets locked in the shared ledger for everyone, and no one can change it—only new tasks or changes can be added on top. This creates a consistent, unchangeable record of project progress that everyone trusts and follows.
+
+
+## How Does BlockChain Work
+
+A blockchain transaction starts when someone initiates it, and the information is encrypted and sent to a network of computers (nodes) to verify it. Once verified, the transaction joins a group of other approved transactions to form a new block. The network then agrees on which block to add, and the selected node, or “miner,” earns a reward. The block is then linked to the previous one, forming a secure chain. Once added, the transaction is complete, and the details are permanently stored for anyone to view.
+
+![Blockchain Working by Geek for Geeks](https://github.com/user-attachments/assets/a8fad7ef-17ae-4f87-8871-2dd38503d785)
+
+1. **Initiating a Transaction**: A new transaction is created and enters the blockchain network. The details are encrypted using public and private keys for security.
+
+2. **Verification of Transaction**: The transaction is sent to multiple peer-to-peer computers (nodes) worldwide. These nodes check if the transaction is valid, like confirming if there’s enough balance.
+
+3. **Formation of a New Block**: Verified transactions are collected in a "mempool" by each node. These mempools then group together to form a new block.
+
+4. **Consensus Algorithm**: Nodes use a consensus mechanism to decide which block to add next, ensuring everyone agrees on the latest valid block. The node that successfully adds a block (a “miner”) receives a reward.
+
+5. **Addition of the New Block to the Blockchain**: Once the block gets a unique hash value, it is added to the blockchain. Each block links to the previous one through its hash, creating a secure chain.
+
+6. **Transaction Complete**: After the block is added, the transaction is finished. The record is stored permanently, and anyone can look it up to confirm.
+
+
+## 
+
+
+
+## Skills to Make a Good BlockChain Project
+
+
+
+![BlockChain Skills by Columbia Learning](https://github.com/user-attachments/assets/cacd6e92-761c-4c8e-bc72-38ee71d25a83)
