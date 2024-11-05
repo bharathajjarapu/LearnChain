@@ -27,6 +27,9 @@ For adding block into the chain, proof of work is needed. miner need to solve to
 ### Proof of Stake (PoS)
 A consensus algorithm that allows participants to validate transactions based on the number of coins they hold, promoting energy efficiency compared to traditional mining.
 
+### Blockchain Wallet
+A blockchain wallet is a digital wallet that allows you to store, send, and receive cryptocurrencies like bitcoin and Ethereum. Blockchain wallets are similar to traditional bank accounts in that they allow users to easily transfer funds between their various accounts.
+
 ## What is Blockchain ?
 
 Blockchain is a distributed, immutable digital ledger that records transactions across a network of computers. Think of it as a chain of blocks, where each block contains a list of transactions and is cryptographically linked to the previous block, creating an unbreakable chain of information.
@@ -87,14 +90,3 @@ A blockchain transaction starts when someone initiates it, and the information i
 5. **Addition of the New Block to the Blockchain**: Once the block gets a unique hash value, it is added to the blockchain. Each block links to the previous one through its hash, creating a secure chain.
 
 6. **Transaction Complete**: After the block is added, the transaction is finished. The record is stored permanently, and anyone can look it up to confirm.
-
-
-## 
-
-
-
-## Skills to Make a Good BlockChain Project
-
-
-
-![BlockChain Skills by Columbia Learning](https://github.com/user-attachments/assets/cacd6e92-761c-4c8e-bc72-38ee71d25a83)
