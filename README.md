@@ -20,11 +20,15 @@ Decentralization refers to distributing functions across multiple units, forming
 
 Imagine a group project where a team of students needs to track their tasks and progress in one shared spreadsheet. In this setup, they use a single, centralized spreadsheet that all members (like the researcher, writer, designer, and presenter) update as they complete their tasks.
 
+![image](https://github.com/user-attachments/assets/fd2e9277-24d9-4aba-91a3-b0fda5b103af)
+
 This centralized spreadsheet has advantages: everyone has the same information in real-time, and there's a group leader who controls access and ensures everyone is following the same process. Because they all rely on this one spreadsheet, the whole team has a consistent view of the project’s status. But for this to work smoothly, each member must trust that the leader won’t secretly change any completed tasks or historical data without telling the others.
 
 ### Distributed Database
 
 Imagine if each team member in the group project had their own personal copy of the shared spreadsheet instead of using one centralized version. In this setup, each member—the researcher, writer, designer, and presenter—keeps their own version of the spreadsheet and updates it as they complete tasks. The updates are then synchronized among all copies so that everyone eventually has the same, up-to-date information.
+
+![image](https://github.com/user-attachments/assets/224d6f9c-0397-4be8-b7cd-6f18d9c7ba95)
 
 This distributed setup has its advantages. Each member can customize their own spreadsheet to fit their workflow and easily control access within their copy. But it also comes with challenges: any change one member makes needs to be synced across everyone else's copy. If there’s a syncing error or a conflict (like two people updating the same task differently), it can create data issues that take extra time to resolve.
 
@@ -52,7 +56,6 @@ A mathematical algorithm that transforms input data into a fixed-size string of 
 ### Consensus Algorithm
 
 ![BlockChain Structure](https://github.com/user-attachments/assets/e3268d94-45df-47c0-bff5-ec20dfffd179)
-
 
 ### Proof of Work
 For adding block into the chain, proof of work is needed. miner need to solve tough math calculation to mine the block and this needs huge energy and time consumption. After this also, miners verifies that block is not compromised. That’s why it becomes futile for hackers to try breaching the blockchain.
