@@ -93,9 +93,136 @@ A blockchain transaction starts when someone initiates it, and the information i
 6. **Transaction Complete**: After the block is added, the transaction is finished. The record is stored permanently, and anyone can look it up to confirm.
 
 <br></br>
-## Building a Simple Project
+## Building a Simple BlockChain using Python
 
+We are creating Blockchain using Python, mining new blocks, and displaying the whole blockchain with hashing too so,
 
+This is a minimal Flask web app where users can vote, and each vote will be recorded as a new block in the blockchain. I’ll use `BlockChain` and `Block` classes to structure the blockchain and create a simple Bootstrap UI for voting.
+
+**File Structure**
+
+- `app.py` - The main Flask application file.
+- `PyChain.py` - Contains the `BlockChain` and `Block` classes.
+- `templates/index.html` - The HTML file with Bootstrap for the UI.
+
+`PyChain.py`
+
+```python
+import hashlib, time
+
+class Block:
+    def __init__(self, data, prev_hash=""):
+        self.data = data
+        self.prev_hash = prev_hash
+        self.timestamp = time.time()
+        self.hash = self.calc_hash()
+
+    def calc_hash(self):
+        return hashlib.sha256((str(self.data) + self.prev_hash + str(self.timestamp)).encode()).hexdigest()
+
+class BlockChain:
+    def __init__(self):
+        self.chain = [self.create_genesis()]
+
+    def create_genesis(self):
+        return Block("Genesis")
+
+    def addBlock(self, block):
+        block.prev_hash = self.chain[-1].hash
+        block.hash = block.calc_hash()
+        self.chain.append(block)
+
+    def chainValid(self):
+        for i in range(1, len(self.chain)):
+            b, pb = self.chain[i], self.chain[i - 1]
+            if b.hash != b.calc_hash() or b.prev_hash != pb.hash:
+                return False
+        return True
+```
+
+`app.py`
+
+```python
+from flask import Flask, render_template, request, redirect
+from PyChain import BlockChain, Block
+
+app = Flask(__name__)
+chain = BlockChain()
+
+@app.route('/')
+def index():
+    return render_template('index.html', chain=chain.chain, valid=chain.chainValid())
+
+@app.route('/vote', methods=['POST'])
+def vote():
+    choice = request.form.get('choice')
+    if choice:
+        chain.addBlock(Block(choice))
+    return redirect('/')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+`templates/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Blockchain Voting</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center">Blockchain Voting System</h1>
+    <div class="card mt-4">
+        <div class="card-body">
+            <form method="POST" action="/vote">
+                <label for="choice" class="form-label">Select your choice:</label>
+                <select class="form-select mb-3" name="choice" required>
+                    <option value="Candidate 1">Candidate 1</option>
+                    <option value="Candidate 2">Candidate 2</option>
+                    <option value="Candidate 3">Candidate 3</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Vote</button>
+            </form>
+        </div>
+    </div>
+    
+    <h2 class="mt-5">Blockchain Status</h2>
+    <p>Blockchain Valid: {{ 'Yes' if valid else 'No' }}</p>
+    <ul class="list-group">
+        {% for block in chain %}
+        <li class="list-group-item">
+            <strong>Block {{ loop.index }}</strong><br>
+            Data: {{ block.data }}<br>
+            Hash: {{ block.hash }}<br>
+            Previous Hash: {{ block.prev_hash }}<br>
+            Timestamp: {{ block.timestamp }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
+```
+
+### Explanation
+
+1. **Blockchain Logic**:
+   - `Block` represents a block with data, timestamp, and hash.
+   - `BlockChain` initializes a chain with a genesis block and provides a function to add blocks and validate the chain.
+
+2. **Flask App**:
+   - `index()` renders the main page, showing the blockchain and vote options.
+   - `vote()` handles form submissions, adding a new vote as a block.
+
+3. **Bootstrap UI**:
+   - A form for voting with three candidates.
+   - Displays blockchain blocks and chain validity in a styled list.
 
 <br></br>
 ## Suggested Mini-Projects:
