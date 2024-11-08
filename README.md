@@ -226,6 +226,8 @@ if __name__ == "__main__":
 3. **Bootstrap UI**:
    - A form for voting with three candidates.
    - Displays blockchain blocks and chain validity in a styled list.
+  
+## Building a Intermediate Project
 
 <br></br>
 ## Suggested Mini-Projects:
