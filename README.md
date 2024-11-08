@@ -1,12 +1,12 @@
 # Introduction to Blockchain Technology
 BlockChain Guide for Community
 
-
 ![image](https://github.com/user-attachments/assets/b5711e77-bd95-43ac-9258-309fe97eda0a)
 
 
 ## Prererequisites 
 - Understand Basic Programming Languages like `JS` or `Python`
+- To be Added..
 
 <br></br>
 ## What is Blockchain ?
@@ -265,7 +265,7 @@ if __name__ == "__main__":
 
 <br></br>
 ## Building a Intermediate Project
-
+To be Added
 
 
 <br></br>
