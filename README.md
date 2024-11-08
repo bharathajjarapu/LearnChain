@@ -1,8 +1,12 @@
 # Introduction to Blockchain Technology
 BlockChain Guide for Community
 
-## Prererequisites 
 
+![image](https://github.com/user-attachments/assets/b5711e77-bd95-43ac-9258-309fe97eda0a)
+
+
+## Prererequisites 
+- Understand Basic Programming Languages like `JS` or `Python`
 
 <br></br>
 ## What is Blockchain ?
@@ -20,51 +24,78 @@ Decentralization refers to distributing functions across multiple units, forming
 
 Imagine a group project where a team of students needs to track their tasks and progress in one shared spreadsheet. In this setup, they use a single, centralized spreadsheet that all members (like the researcher, writer, designer, and presenter) update as they complete their tasks.
 
-![image](https://github.com/user-attachments/assets/fd2e9277-24d9-4aba-91a3-b0fda5b103af)
-
 This centralized spreadsheet has advantages: everyone has the same information in real-time, and there's a group leader who controls access and ensures everyone is following the same process. Because they all rely on this one spreadsheet, the whole team has a consistent view of the project’s status. But for this to work smoothly, each member must trust that the leader won’t secretly change any completed tasks or historical data without telling the others.
 
-### Distributed Database
+### Understanding Basic Concepts of Blockchain
 
-Imagine if each team member in the group project had their own personal copy of the shared spreadsheet instead of using one centralized version. In this setup, each member—the researcher, writer, designer, and presenter—keeps their own version of the spreadsheet and updates it as they complete tasks. The updates are then synchronized among all copies so that everyone eventually has the same, up-to-date information.
+<details>
+    <h4>Distributed Database</h4>
+  <summary>Distributed Database</summary>
+  <p>Imagine if each team member in the group project had their own personal copy of the shared spreadsheet instead of using one centralized version. In this setup, each member—the researcher, writer, designer, and presenter—keeps their own version of the spreadsheet and updates it as they complete tasks. The updates are then synchronized among all copies so that everyone eventually has the same, up-to-date information.</p>
+  <p>This distributed setup has its advantages. Each member can customize their own spreadsheet to fit their workflow and easily control access within their copy. But it also comes with challenges: any change one member makes needs to be synced across everyone else's copy. If there’s a syncing error or a conflict (like two people updating the same task differently), it can create data issues that take extra time to resolve.</p>
+</details>
 
-![image](https://github.com/user-attachments/assets/224d6f9c-0397-4be8-b7cd-6f18d9c7ba95)
+<details>
+    <h4>Distributed Ledge</h4>
+  <summary>Distributed Ledger</summary>
+  <p>Blockchain technology is like a shared, digital record book, called a <em>Distributed ledger</em>, that keeps a history of all transactions. Just as an accounting ledger shows every transaction that affects the total balance, a blockchain ledger records every transaction that affects the final state of information.</p>
+  <p>Returning to the group project example: instead of one centralized spreadsheet or individual copies that need constant syncing, blockchain allows each team member to keep an identical copy of the project’s progress in a way that automatically updates for everyone without needing a central owner. Once a task is marked as complete, it gets locked in the shared ledger for everyone, and no one can change it—only new tasks or changes can be added on top. This creates a consistent, unchangeable record of project progress that everyone trusts and follows.</p>
+</details>
 
-This distributed setup has its advantages. Each member can customize their own spreadsheet to fit their workflow and easily control access within their copy. But it also comes with challenges: any change one member makes needs to be synced across everyone else's copy. If there’s a syncing error or a conflict (like two people updating the same task differently), it can create data issues that take extra time to resolve.
+<details>
+    <h4>Cryptocurrency</h4>
+  <summary>Cryptocurrency</summary>
+  <p>Cryptocurrency is a digital or virtual currency that uses cryptography to encrypt its transactions and regulate the creation of new units.</p>
+</details>
 
-### Distributed Ledger
+<details>
+    <h4>Bitcoin & Ethereum</h4>
+  <summary>Bitcoin & Ethereum</summary>
+  <ul>
+    <li><strong>Bitcoin:</strong> Bitcoin is a decentralized digital currency that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.</li>
+    <li><strong>Ethereum:</strong> Ethereum is also a decentralized digital currency, but it goes beyond being just a payment system. It is also a platform that allows developers to build and run decentralized applications (dapps).</li>
+  </ul>
+</details>
 
-Blockchain technology is like a shared, digital record book, called a *Distributed ledger*, that keeps a history of all transactions. Just as an accounting ledger shows every transaction that affects the total balance, a blockchain ledger records every transaction that affects the final state of information.
+<details>
+    <h4>Peer-to-Peer (P2P)</h4>
+  <summary>Peer-to-Peer (P2P)</summary>
+  <p>A decentralized network architecture where participants (peers) interact directly without a central authority, enhancing resilience and efficiency.</p>
+</details>
 
-Returning to the group project example: instead of one centralized spreadsheet or individual copies that need constant syncing, blockchain allows each team member to keep an identical copy of the project’s progress in a way that automatically updates for everyone without needing a central owner. Once a task is marked as complete, it gets locked in the shared ledger for everyone, and no one can change it—only new tasks or changes can be added on top. This creates a consistent, unchangeable record of project progress that everyone trusts and follows.
+<details>
+    <h4>Hash Function</h4>
+  <summary>Hash Function</summary>
+  <p>A mathematical algorithm that transforms input data into a fixed-size string of characters, serving as a digital fingerprint for data integrity.</p>
+  <img src="https://github.com/user-attachments/assets/00d8ba45-5861-4519-8f65-c0302669bbdf" width="400"/>
+</details>
 
-### Cryptocurrency
-Cryptocurrency is a digital or virtual currency that uses cryptography to encrypt its transactions and regulate the creation of new units.
+<details>
+    <h4>Consensus Algorithm</h4>
+  <summary>Consensus Algorithm</summary>
+  <img src="https://github.com/user-attachments/assets/e3268d94-45df-47c0-bff5-ec20dfffd179" width="400"/>
+</details>
 
-### Bitcoin & Etherium
-- Bitcoin is a decentralized digital currency that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.
-- Ethereum is also a decentralized digital currency, but it goes beyond being just a payment system. It is also a platform that allows developers to build and run decentralized applications (dapps).
+<details>
+    <h4>Proof of Work</h4>
+  <summary>Proof of Work</summary>
+  <p>For adding a block into the chain, proof of work is needed. Miners need to solve tough math calculations to mine the block, which requires huge energy and time consumption. After this, miners verify that the block is not compromised. This makes it futile for hackers to try breaching the blockchain.</p>
+</details>
 
-### Peer-to-Peer (P2P) 
-A decentralized network architecture where participants (peers) interact directly without a central authority, enhancing resilience and efficiency.
+<details>
+    <h4>Proof of Stake (PoS)</h4>
+  <summary>Proof of Stake (PoS)</summary>
+  <p>A consensus algorithm that allows participants to validate transactions based on the number of coins they hold, promoting energy efficiency compared to traditional mining.</p>
+</details>
 
-### Hash Function
-A mathematical algorithm that transforms input data into a fixed-size string of characters, serving as a digital fingerprint for data integrity.
+<details>
+    <h4>Blockchain Wallet</h4>
+  <summary>Blockchain Wallet</summary>
+  <p>A blockchain wallet is a digital wallet that allows you to store, send, and receive cryptocurrencies like bitcoin and Ethereum. Blockchain wallets are similar to traditional bank accounts in that they allow users to easily transfer funds between their various accounts.</p>
+</details>
 
-![What-Is-Blockchain-Infographic](https://github.com/user-attachments/assets/00d8ba45-5861-4519-8f65-c0302669bbdf)
 
-### Consensus Algorithm
 
-![BlockChain Structure](https://github.com/user-attachments/assets/e3268d94-45df-47c0-bff5-ec20dfffd179)
-
-### Proof of Work
-For adding block into the chain, proof of work is needed. miner need to solve tough math calculation to mine the block and this needs huge energy and time consumption. After this also, miners verifies that block is not compromised. That’s why it becomes futile for hackers to try breaching the blockchain.
-
-### Proof of Stake (PoS)
-A consensus algorithm that allows participants to validate transactions based on the number of coins they hold, promoting energy efficiency compared to traditional mining.
-
-### Blockchain Wallet
-A blockchain wallet is a digital wallet that allows you to store, send, and receive cryptocurrencies like bitcoin and Ethereum. Blockchain wallets are similar to traditional bank accounts in that they allow users to easily transfer funds between their various accounts.
 
 ## Key Characteristics of BlockChain
 
@@ -76,12 +107,13 @@ A blockchain wallet is a digital wallet that allows you to store, send, and rece
 
 4. **Secure**: Advanced cryptography and consensus mechanisms protect the network from unauthorized access and manipulation.
 
-<br></br>
+
+
 ## How Does BlockChain Work
 
 A blockchain transaction starts when someone initiates it, and the information is encrypted and sent to a network of computers (nodes) to verify it. Once verified, the transaction joins a group of other approved transactions to form a new block. The network then agrees on which block to add, and the selected node, or “miner,” earns a reward. The block is then linked to the previous one, forming a secure chain. Once added, the transaction is complete, and the details are permanently stored for anyone to view.
 
-![Blockchain Working by Geek for Geeks](https://github.com/user-attachments/assets/a8fad7ef-17ae-4f87-8871-2dd38503d785)
+![Blockchain Working by Geek for Geeks](https://github.com/user-attachments/assets/164f8afd-b29a-402a-b936-138b64e73f89)
 
 1. **Initiating a Transaction**: A new transaction is created and enters the blockchain network. The details are encrypted using public and private keys for security.
 
@@ -96,7 +128,7 @@ A blockchain transaction starts when someone initiates it, and the information i
 6. **Transaction Complete**: After the block is added, the transaction is finished. The record is stored permanently, and anyone can look it up to confirm.
 
 <br></br>
-## Building a Simple BlockChain using Python
+## Building a Simple BlockChain using Python!
 
 We are creating Blockchain using Python, mining new blocks, and displaying the whole blockchain with hashing too so,
 
@@ -213,6 +245,10 @@ if __name__ == "__main__":
 </html>
 ```
 
+**Preview**
+
+![image (3)](https://github.com/user-attachments/assets/90a74a69-3c1e-4bbd-8524-9a60f6c08dc6)
+
 ### Explanation
 
 1. **Blockchain Logic**:
@@ -226,8 +262,11 @@ if __name__ == "__main__":
 3. **Bootstrap UI**:
    - A form for voting with three candidates.
    - Displays blockchain blocks and chain validity in a styled list.
-  
+
+<br></br>
 ## Building a Intermediate Project
+
+
 
 <br></br>
 ## Suggested Mini-Projects:
