@@ -1,0 +1,13 @@
+{
+  "name": "certregdapp",
+  "version": "1.0.0",
+  "main": "index.html",
+  "keywords": [],
+  "author": "Bharath",
+  "license": "MIT",
+  "description": "Blockchain for Certificate Registry",
+  "dependencies": {
+    "web3": "^1.5.2",
+    "truffle": "^5.10.1"
+  } 
+}
