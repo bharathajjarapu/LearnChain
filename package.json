@@ -1,13 +1,20 @@
 {
-  "name": "certregdapp",
-  "version": "1.0.0",
-  "main": "index.html",
-  "keywords": [],
-  "author": "Bharath",
-  "license": "MIT",
-  "description": "Blockchain for Certificate Registry",
-  "dependencies": {
-    "web3": "^1.5.2",
-    "truffle": "^5.10.1"
-  } 
+    "name": "certificate-registry-dapp",
+    "version": "1.0.0",
+    "description": "Blockchain-based Certificate Registry DApp",
+    "main": "truffle-config.js",
+    "scripts": {
+        "start": "npm run ganache & npm run migrate",
+        "ganache": "ganache-cli -p 8545",
+        "migrate": "truffle migrate --reset",
+        "test": "truffle test"
+    },
+    "dependencies": {
+        "web3": "^1.5.2"
+    },
+    "devDependencies": {
+        "@truffle/hdwallet-provider": "^1.5.1",
+        "ganache-cli": "^6.12.2",
+        "truffle": "^5.4.15"
+    }
 }

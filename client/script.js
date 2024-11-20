@@ -2,21 +2,24 @@
 let web3;
 let contractInstance;
 
-// Configuration
+// Configuration - You'll need to update this address after deploying your contract
 const CONFIG = {
-    contractAddress: '0x5FbDB2315678afecb367f032d93F642f64180aa3'
+    contractAddress: '0xf8c107958940aA3741F6fca3504C7bB7EB2A658b' // Replace with your deployed contract address
 };
 
 // DOM Elements
 const elements = {
     connectionStatus: document.getElementById('connectionStatus'),
-    registerForm: document.getElementById('registerForm')
+    registerForm: document.getElementById('registerForm'),
+    verifyBtn: document.getElementById('verifyBtn'),
+    verifyCertId: document.getElementById('verifyCertId'),
+    verificationResult: document.getElementById('verificationResult')
 };
 
 // Load contract ABI from JSON file
 async function loadContractABI() {
     try {
-        const response = await fetch('../build/contracts/CertificateRegistry.json');
+        const response = await fetch('/build/contracts/CertificateRegistry.json');
         const contractJson = await response.json();
         return contractJson.abi;
     } catch (error) {
@@ -29,24 +32,25 @@ async function loadContractABI() {
 async function initDApp() {
     if (typeof window.ethereum !== 'undefined') {
         try {
-            // Load contract ABI
-            const contractABI = await loadContractABI();
-            
             // Request account access
             await window.ethereum.request({ method: 'eth_requestAccounts' });
             
             // Initialize Web3
             web3 = new Web3(window.ethereum);
             
+            // Load contract ABI
+            const contractABI = await loadContractABI();
+            
+            if (!CONFIG.contractAddress) {
+                throw new Error('Please set the contract address in CONFIG');
+            }
+            
+            // Initialize contract instance
+            contractInstance = new web3.eth.Contract(contractABI, CONFIG.contractAddress);
+            
             // Get the current account
             const accounts = await web3.eth.getAccounts();
             const currentAccount = accounts[0];
-            
-            // Initialize contract instance
-            contractInstance = new web3.eth.Contract(
-                contractABI,
-                CONFIG.contractAddress
-            );
             
             // Update UI
             updateConnectionStatus('Connected', currentAccount);
@@ -137,7 +141,30 @@ async function registerCertificate(id, name, achievement) {
     }
 }
 
-// Form submission handler
+// Verify certificate
+async function verifyCertificate(id) {
+    if (!contractInstance) {
+        throw new Error('DApp not initialized');
+    }
+
+    try {
+        const result = await contractInstance.methods
+            .verifyCertificate(id)
+            .call();
+
+        return {
+            isValid: result[0],
+            name: result[1],
+            achievement: result[2],
+            timestamp: new Date(result[3] * 1000).toLocaleString()
+        };
+    } catch (error) {
+        console.error('Verification error:', error);
+        throw error;
+    }
+}
+
+// Form submission handler for registration
 elements.registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -155,6 +182,49 @@ elements.registerForm.addEventListener('submit', async (e) => {
         alert(`Error registering certificate: ${error.message}`);
     }
 });
+
+// Verification button handler
+elements.verifyBtn.addEventListener('click', async () => {
+    const certId = elements.verifyCertId.value;
+    
+    try {
+        const certInfo = await verifyCertificate(certId);
+        
+        let resultHTML = `
+            <div class="alert ${certInfo.isValid ? 'alert-success' : 'alert-warning'}">
+                <strong>Certificate Status:</strong> ${certInfo.isValid ? 'Valid' : 'Invalid'}
+                <br>
+                <strong>Name:</strong> ${certInfo.name}
+                <br>
+                <strong>Achievement:</strong> ${certInfo.achievement}
+                <br>
+                <strong>Timestamp:</strong> ${certInfo.timestamp}
+            </div>
+        `;
+        
+        elements.verificationResult.innerHTML = resultHTML;
+    } catch (error) {
+        elements.verificationResult.innerHTML = `
+            <div class="alert alert-danger">
+                Error verifying certificate: ${error.message}
+            </div>
+        `;
+    }
+});
+
+// Connect wallet button (optional, for explicit connection)
+function connectWallet() {
+    if (typeof window.ethereum !== 'undefined') {
+        window.ethereum.request({ method: 'eth_requestAccounts' })
+            .then(initDApp)
+            .catch(error => {
+                console.error('Failed to connect wallet:', error);
+                updateConnectionStatus('Error', null, error.message);
+            });
+    } else {
+        alert('Please install MetaMask!');
+    }
+}
 
 // Initialize DApp when page loads
 document.addEventListener('DOMContentLoaded', initDApp);
