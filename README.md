@@ -265,8 +265,6 @@ if __name__ == "__main__":
 
 <br></br>
 ## Building a Intermediate Project
-To be Added
-
 
 <br></br>
 ## Suggested Mini-Projects:
