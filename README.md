@@ -264,9 +264,6 @@ if __name__ == "__main__":
    - Displays blockchain blocks and chain validity in a styled list.
 
 <br></br>
-## Building a Intermediate Project
-
-<br></br>
 ## Suggested Mini-Projects:
 
 - [ ] **Digital Piggy Bank**  
